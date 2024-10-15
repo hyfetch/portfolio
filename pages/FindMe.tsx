@@ -3,7 +3,7 @@ export default function FindMe() {
       <div>
         <h2 className="text-xl font-semibold mb-4">Socials</h2>
         <div className="platforms flex justify-start space-x-4 mb-8">
-          <a href="https://bsky.app/profile/mstrv.pl" className="platform">
+          <a href="https://bsky.app/profile/mero.lol" className="platform">
             <img src="/img/platforms/bsky.svg" height="32" width="32" alt="Bsky" />
             <div className="platform-tooltip">Bluesky</div>
           </a>
