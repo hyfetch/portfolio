@@ -65,7 +65,7 @@ export default function Header() {
         <p>
           I go by{' '}
           <span className="pronoun">
-            <a href="https://en.pronoun.page/@mstrv" target="_blank" rel="noopener noreferrer">
+            <a href="https://en.pronouns.page/@mstrv" target="_blank" rel="noopener noreferrer">
               any/all
             </a>
           </span>
