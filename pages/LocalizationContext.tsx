@@ -74,3 +74,5 @@ export const LocalizationProvider: React.FC<{ children: ReactNode }> = ({ childr
     </LocalizationContext.Provider>
   );
 };
+
+export default LocalizationProvider;
