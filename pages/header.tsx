@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { useLocalization } from './LocalizationContext'; // Adjust the path as necessary
 
 const names = ['Mero', 'mstrv', 'merowo', 'Mae'];
-
 export default function Header() {
+  const { localization } = useLocalization();
   const [displayedText, setDisplayedText] = useState('');
   let currentIndex = 0;
 
@@ -49,7 +50,7 @@ export default function Header() {
     <div className="header-container">
       <div className="header text-center mb-8">
         <h1 className="title text-3xl font-bold mb-2">
-          Hi, I'm <span id="name"></span>
+          {localization?.headerText} <span id="name">{displayedText}</span>
           <span className="cursor">|</span>
         </h1>
         {/* Image */}
@@ -73,3 +74,4 @@ export default function Header() {
     </div>
   );
 }
+

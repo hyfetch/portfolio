@@ -10,7 +10,7 @@ export default function NotableRoles() {
           <img
             width="32"
             height="32"
-            src="https://cdn.discordapp.com/icons/820745488231301210/47bbc019cf49283db25358e45650d2c8.webp?size=1024&format=webp&width=0&height=256"
+            src="https://cdn.discordapp.com/icons/820745488231301210/cb18d422b7f7933f11f5e2f60b8c0bdd.webp?size=1024&width=563&height=563"
             alt="NTTS"
           />
           <span className="server-tooltip">Mod @ NTTS</span>

@@ -1,58 +1,60 @@
-/* whole page fade in */
+/* Whole Page Fade-In */
 body {
   animation: fadeIn 1s ease forwards;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #e0e0e0;
 }
 
 @keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 img {
   border-radius: 10px;
+  max-width: 100%; /* Ensures images are responsive */
 }
 
-/* Ensure platforms are aligned properly */
+/* Platform Alignment */
 .platforms {
-  text-align: flex-start;
-  display: left; /* Use flexbox for layout */
-  flex-wrap: wrap; /* Allow platforms to wrap to the next line */
-  justify-content: center; /* Center platforms horizontally */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 10px;
 }
 
 .platform, .language, .server {
   display: inline-block;
   margin: 10px;
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
 }
 
 .platform:hover, .language:hover, .server:hover {
-  transform: scale(1.2);
-}
-a {
-  color: #ffbf59;
+  transform: scale(1.05);
 }
 
+/* Tooltip Styling */
 .platform-tooltip, .language-tooltip, .server-tooltip {
   position: absolute;
-  top: 100%;
+  top: 110%;
   left: 50%;
   transform: translateX(-50%);
   background-color: #333;
   color: #fff;
-  padding: 5px;
+  padding: 8px;
   border-radius: 5px;
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
-  width: 100px; /* Set a fixed width for all tooltips */
-  text-align: center; /* Center text inside tooltip */
+  max-width: 120px;
+  text-align: center;
+  font-size: 0.85rem;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
-
 
 .platform:hover .platform-tooltip,
 .language:hover .language-tooltip,
@@ -60,164 +62,126 @@ a {
   opacity: 1;
 }
 
-
-/* Global styles */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #121212; /* Dark background */
-  /* background-color: #121212; Dark background */
-  color: #e0e0e0; /* Light text color */
-}
-
-/* Wrapper styles */
+/* Wrapper Styles */
 .wrapper {
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Align items to the top */
-  min-height: 100vh; /* Full viewport height */
+  align-items: flex-start;
+  min-height: 100vh;
 }
 
-/* Content styles */
+/* Content Container */
 .content {
-  display: flex; /* Use flexbox for layout */
-  flex-direction: column; /* Arrange content in a column */
-  width: 100%; /* Take full width of the page */
-  max-width: 800px; /* Maximum width */
-  margin: 20px; /* Add some margin */
-  background-color: #1e1e1e; /* Dark background */
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5); /* Box shadow for depth */
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 1400px;
+  margin: 20px;
+  background-color: #1e1e1e;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
 }
 
-/* Header container styles */
+/* Header Styles */
 .header-container {
-  text-align: center; /* Center header horizontally */
-  margin-bottom: 20px; /* Add space below header */
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-/* Skills styles */
-.skills {
-  text-align: left; /* Align skills list to the left */
-}
-
-/* Header styles */
-.header {
-  text-align: center; /* Center text horizontally */
-  margin-bottom: 20px; /* Add space below header */
-}
-
-/* Title styles */
 .title {
-  font-size: 2.5rem;
-  color: #e0e0e0; /* Light text color */
+  font-size: 2.2rem;
+  color: #ffbf59;
 }
 
-/* Description styles */
 .description {
-  font-size: 1.2rem;
-  color: #b0b0b0; /* Lighter text color */
-  margin-bottom: 20px; /* Add space below description */
+  font-size: 1rem;
+  color: #b0b0b0;
+  margin-bottom: 20px;
 }
 
-/* Full Description styles */
-.full-description {
-  text-align: justify; /* Justify text for better readability */
+/* Skills Styles */
+.skills {
+  text-align: left;
+  font-size: 1rem;
 }
 
-/* Skills styles */
 .skills ul {
-  list-style-type: none; /* Remove bullets */
+  list-style-type: none;
   padding: 0;
 }
 
 .skills ul li {
-  margin-bottom: 10px; /* Add space between each skill */
+  margin-bottom: 8px;
+  color: #cccccc;
 }
 
-/* Cursor styles */
+/* Cursor */
 .cursor {
-  color: #76ff03; /* Green cursor color */
-  animation: blinkCursor 1s infinite; /* Blink animation */
+  color: #76ff03;
+  animation: blinkCursor 1s infinite;
 }
 
 @keyframes blinkCursor {
-  0% {
-      opacity: 1; /* Fully visible */
-  }
-  50% {
-      opacity: 0; /* Invisible */
-  }
-  100% {
-      opacity: 1; /* Fully visible */
-  }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
+/* Footer */
 footer {
   text-align: center;
   margin-top: 20px;
   color: #b0b0b0;
   font-size: 0.8rem;
-
 }
 
+/* Toast Notification */
 .toastinfo {
-
   position: fixed;
   bottom: 20px;
   right: 20px;
   background-color: #333;
   color: #fff;
-  padding: 10px;
+  padding: 12px;
   border-radius: 5px;
   z-index: 9999;
   animation: slide-out 0.3s 5.5s ease-out forwards;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 @keyframes slide-out {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(100%);
-    opacity: 0;
-  }
+  from { transform: translateX(0); }
+  to { transform: translateX(100%); opacity: 0; }
 }
 
-.message {
-  margin: 0;
-  font-size: 1.0rem;
-}
-
-
+/* Notification Banner */
 .notification-banner {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  font-size: 0.8rem;
-  padding: 10px;
+  font-size: 0.85rem;
+  padding: 12px;
   background-color: #333;
   color: #fff;
   text-align: center;
   z-index: 9999;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
+
 .dismiss-button {
   position: absolute;
-  right: 13px;
+  right: 15px;
   background-color: transparent;
   border: none;
   color: #fff;
   cursor: pointer;
   font-size: 1.2rem;
-  margin-left: 10px;
-}
-.pride-flag {
-  border-radius: 10px 10px 10px 10px;
 }
 
+.pride-flag {
+  border-radius: 10px;
+}
 
 .nostalgia-toggle {
   background-image: url('/img/todo-categorize-this-folder/nostalgia.png');
@@ -230,11 +194,54 @@ footer {
   height: 20px;
 }
 
-a.pronoun{
+a {
+  color: #ffbf59;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a.pronoun {
   margin-bottom: 20px;
 }
-.pronoun:hover{
+
+a.pronoun:hover {
   cursor: pointer;
-  transition: transform 0.3s ease;
-  transform: scale(1.1);
+  transition: transform 0.2s ease;
+  transform: scale(1.05);
+}
+
+/* Language Selector Styles */
+.localization-provider {
+  position: relative; /* Ensure the absolute positioning of the dropdown works */
+}
+
+/* Language Selector Styles */
+.language-selector {
+  position: fixed; /* Make it fixed so it stays in the viewport */
+  bottom: 20px;    /* Distance from the bottom of the viewport */
+  right: 20px;     /* Distance from the right of the viewport */
+  z-index: 1000;   /* Ensure it appears above other content */
+}
+
+.language-selector select {
+  background-color: #1e1e1e; /* Match the content background */
+  color: #ffbf59;             /* Text color */
+  border: 1px solid #333;     /* Border color */
+  border-radius: 5px;         /* Rounded corners */
+  padding: 8px 12px;          /* Padding for better appearance */
+  cursor: pointer;            /* Change cursor to pointer */
+  transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.language-selector select:hover {
+  background-color: #2e2e2e; /* Darker background on hover */
+}
+
+.language-selector select:focus {
+  outline: none;              /* Remove outline on focus */
+  border-color: #ffbf59;      /* Border color change on focus */
+  box-shadow: 0 0 5px rgba(255, 191, 89, 0.5); /* Soft shadow on focus */
 }
