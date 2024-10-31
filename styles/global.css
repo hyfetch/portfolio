@@ -218,30 +218,68 @@ a.pronoun:hover {
   position: relative; /* Ensure the absolute positioning of the dropdown works */
 }
 
-/* Language Selector Styles */
-.language-selector {
-  position: fixed; /* Make it fixed so it stays in the viewport */
+/* Dropdown Styles */
+.dropdown {
+  position: fixed; /* Make it fixed to stay in the viewport */
   bottom: 20px;    /* Distance from the bottom of the viewport */
   right: 20px;     /* Distance from the right of the viewport */
   z-index: 1000;   /* Ensure it appears above other content */
 }
 
-.language-selector select {
+.dropdown-content {
+  display: none; /* Hide dropdown content by default */
+  position: absolute;
+  bottom: 100%; /* Position above the button */
+  left: 50%;
+  transform: translateX(-50%);
   background-color: #1e1e1e; /* Match the content background */
-  color: #ffbf59;             /* Text color */
-  border: 1px solid #333;     /* Border color */
-  border-radius: 5px;         /* Rounded corners */
-  padding: 8px 12px;          /* Padding for better appearance */
-  cursor: pointer;            /* Change cursor to pointer */
-  transition: background-color 0.3s ease; /* Smooth background transition */
+  border: 1px solid #333; /* Border color to match theme */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5); /* Shadow effect */
+  z-index: 1; /* Ensure it appears above other content */
+  width: 200px; /* Set a width for the dropdown */
+  border-radius: 5px; /* Rounded corners */
+  opacity: 0; /* Start hidden for fade-in effect */
+  transition: opacity 0.3s ease; /* Smooth transition for fade-in */
 }
 
-.language-selector select:hover {
-  background-color: #2e2e2e; /* Darker background on hover */
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block; /* Show dropdown */
+  opacity: 1; /* Fade in effect */
 }
 
-.language-selector select:focus {
-  outline: none;              /* Remove outline on focus */
-  border-color: #ffbf59;      /* Border color change on focus */
-  box-shadow: 0 0 5px rgba(255, 191, 89, 0.5); /* Soft shadow on focus */
+/* Dropdown Item */
+.dropdown-item {
+  padding: 12px; /* Increased padding for better touch targets */
+  cursor: pointer; /* Pointer cursor on hover */
+  display: flex; /* Use flex to align flag and text */
+  align-items: center; /* Center vertically */
+  color: #e0e0e0; /* Text color to match overall theme */
 }
+
+.dropdown-item:hover {
+  background-color: #333; /* Dark background on hover for visibility */
+}
+
+/* Flag Icon Styles */
+.flag-icon {
+  width: 20px; /* Set width for flag icons */
+  height: 15px; /* Set height for flag icons */
+  margin-right: 8px; /* Space between flag and text */
+}
+
+
+.dropdown-button {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-button:hover {
+  background-color: #333;
+}
+

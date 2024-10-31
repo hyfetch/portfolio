@@ -24,7 +24,7 @@ export default function Home() {
           <Skills />
           <FindMe />
           <Footer />
-          <Toast />
+          {/* <Toast /> */}
 {/*           <I need to add this comment  /> */}
 {/*           <Nostalgia /> */}
           {/* <NotificationBanner /> */}

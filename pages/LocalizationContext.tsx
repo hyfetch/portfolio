@@ -1,12 +1,8 @@
 import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 
+// Define Localization and LocalizationContextType interfaces
 interface Localization {
-  title: string;
-  description: string;
-  headerText: string;
-  footerText1: string;
-  footerText2: string;
-  contactLinkText: string;
+  [key: string]: string; 
 }
 
 interface LocalizationContextType {
@@ -15,8 +11,10 @@ interface LocalizationContextType {
   language: string;
 }
 
+// Create context
 const LocalizationContext = createContext<LocalizationContextType | undefined>(undefined);
 
+// Custom hook to use the localization context
 export const useLocalization = () => {
   const context = useContext(LocalizationContext);
   if (!context) {
@@ -25,22 +23,23 @@ export const useLocalization = () => {
   return context;
 };
 
+// Define LocalizationProvider component
 export const LocalizationProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [language, setLanguage] = useState<string>('en'); // Default language
   const [localization, setLocalization] = useState<Localization | null>(null);
 
+  // Fetch localization data from the server
   const fetchLocalization = async (lang: string) => {
     try {
       const response = await fetch(`/localization/${lang}.json`);
       if (!response.ok) {
         throw new Error(`Failed to fetch localization file for ${lang}`);
       }
-      const localizationData = await response.json();
-      return localizationData;
+      return await response.json();
     } catch (error) {
       console.error(error);
       const fallbackResponse = await fetch(`/localization/en.json`);
-      return fallbackResponse.json();
+      return fallbackResponse.ok ? await fallbackResponse.json() : null;
     }
   };
 
@@ -53,25 +52,66 @@ export const LocalizationProvider: React.FC<{ children: ReactNode }> = ({ childr
     loadLocalization();
   }, [language]);
 
-  const handleLanguageChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setLanguage(event.target.value);
+  const handleLanguageChange = (lang: string) => {
+    setLanguage(lang);
   };
 
   return (
-    <LocalizationContext.Provider value={{ localization, setLanguage, language }}>
+    <LocalizationContext.Provider value={{ localization, setLanguage: handleLanguageChange, language }}>
       <div className="localization-provider">
         {children}
         {/* Language Selector Dropdown */}
         <div className="language-selector">
-          <select value={language} onChange={handleLanguageChange}>
-            <option value="en">English</option>
-            <option value="es">Español</option>
-            <option value="de">Deutsch</option>
-            <option value="ru">Русский</option>
-          </select>
+          <CustomDropdown currentLang={language} onLangChange={handleLanguageChange} />
         </div>
       </div>
     </LocalizationContext.Provider>
+  );
+};
+
+// Custom dropdown component
+const CustomDropdown: React.FC<{ currentLang: string; onLangChange: (lang: string) => void }> = ({ currentLang, onLangChange }) => {
+  const languages = [
+    { code: 'en', name: 'English', flag: 'https://flagcdn.com/w20/us.png' },
+    { code: 'es', name: 'Español', flag: 'https://flagcdn.com/w20/es.png' },
+    { code: 'de', name: 'Deutsch', flag: 'https://flagcdn.com/w20/de.png' },
+    { code: 'ru', name: 'Русский', flag: 'https://flagcdn.com/w20/ru.png' },
+    { code: 'pl', name: 'Polski', flag: 'https://flagcdn.com/w20/pl.png' },
+    { code: 'jp', name: '日本語', flag: 'https://flagcdn.com/w20/jp.png' },
+  ];
+
+  const [isOpen, setIsOpen] = useState(false); // State to control dropdown visibility
+
+  const toggleDropdown = () => setIsOpen((prev) => !prev);
+
+  return (
+    <div className="dropdown">
+      <button className="dropdown-button" onClick={toggleDropdown}>
+        <img
+          src={languages.find(lang => lang.code === currentLang)?.flag}
+          alt=""
+          className="flag-icon"
+        />
+        {languages.find(lang => lang.code === currentLang)?.name}
+      </button>
+      {isOpen && (
+        <div className="dropdown-content">
+          {languages.map((lang) => (
+            <div
+              key={lang.code}
+              className="dropdown-item"
+              onClick={() => {
+                onLangChange(lang.code);
+                setIsOpen(false);
+              }}
+            >
+              <img src={lang.flag} alt={lang.name} className="flag-icon" />
+              {lang.name}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
   );
 };
 
