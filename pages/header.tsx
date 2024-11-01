@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLocalization } from './LocalizationContext'; // Adjust the path as necessary
+import { useLocalization } from './LocalizationContext';
 
 const names = ['Mero', 'mstrv', 'merowo', 'Mae'];
 export default function Header() {
