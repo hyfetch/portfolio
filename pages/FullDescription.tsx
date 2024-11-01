@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocalization } from './LocalizationContext'; // Adjust the path as necessary
+import { useLocalization } from './LocalizationContext';
 
 const FullDescription: React.FC = () => {
   const { localization } = useLocalization();

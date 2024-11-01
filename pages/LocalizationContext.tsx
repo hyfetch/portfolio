@@ -1,8 +1,9 @@
 import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
+import { useLocalStorage } from 'react-use';
 
 // Define Localization and LocalizationContextType interfaces
 interface Localization {
-  [key: string]: string; 
+  [key: string]: string;
 }
 
 interface LocalizationContextType {
@@ -25,8 +26,11 @@ export const useLocalization = () => {
 
 // Define LocalizationProvider component
 export const LocalizationProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<string>('en'); // Default language
+  const [storedLanguage, setStoredLanguage] = useLocalStorage('language', 'en');
+  const initialLanguage = storedLanguage || 'en'; // Ensure consistent initial value
+  const [language, setLanguage] = useState<string>(initialLanguage);
   const [localization, setLocalization] = useState<Localization | null>(null);
+  const [loading, setLoading] = useState<boolean>(true); // State to manage loading
 
   // Fetch localization data from the server
   const fetchLocalization = async (lang: string) => {
@@ -47,6 +51,7 @@ export const LocalizationProvider: React.FC<{ children: ReactNode }> = ({ childr
     const loadLocalization = async () => {
       const localizationData = await fetchLocalization(language);
       setLocalization(localizationData);
+      setLoading(false); // Set loading to false after fetching
     };
 
     loadLocalization();
@@ -54,7 +59,13 @@ export const LocalizationProvider: React.FC<{ children: ReactNode }> = ({ childr
 
   const handleLanguageChange = (lang: string) => {
     setLanguage(lang);
+    setStoredLanguage(lang);
   };
+
+  // Show a loading state if localization is not yet loaded
+  if (loading) {
+    return <div>Loading...</div>; // You can customize this loading indicator
+  }
 
   return (
     <LocalizationContext.Provider value={{ localization, setLanguage: handleLanguageChange, language }}>
@@ -79,7 +90,6 @@ const CustomDropdown: React.FC<{ currentLang: string; onLangChange: (lang: strin
     { code: 'pl', name: 'Polski', flag: 'https://flagcdn.com/w20/pl.png' },
     { code: 'jp', name: '日本語', flag: 'https://flagcdn.com/w20/jp.png' },
   ];
-
   const [isOpen, setIsOpen] = useState(false); // State to control dropdown visibility
 
   const toggleDropdown = () => setIsOpen((prev) => !prev);

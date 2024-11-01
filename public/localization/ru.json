@@ -4,7 +4,10 @@
     "description": "Привет, я Mero. Я 16-летний самоучка-разработчик, в настоящее время изучаю компьютерные науки.",
     "footerText1": "OwO что то?",
     "footerText2": "В любом случае, если вы хотите связаться со мной, обратитесь к",
-    "contactLinkText": "Здесь"
+    "contactLinkText": "Здесь",
+    "programmingLanguages": "Языки программирования",
+    "frameworksAndLibraries": "Фреймворки и библиотеки",
+    "Virtualization": "Виртуализация"
 }
 
 
