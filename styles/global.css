@@ -179,18 +179,6 @@ footer {
   font-size: 1.2rem;
 }
 
-/* Nostalgia Toggle */
-.nostalgia-toggle {
-  background-image: url('/img/todo-categorize-this-folder/nostalgia.png');
-  background-color: transparent;
-  border: none;
-  background-size: 20px;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 20px;
-  height: 20px;
-}
-
 a {
   color: #ffbf59;
   text-decoration: none;
