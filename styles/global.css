@@ -1,11 +1,16 @@
 /* Whole Page Fade-In */
-body {
-  animation: fadeIn 1s ease forwards;
+html, body {
+  height: 100%; /* Ensure full height */
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #121212;
   color: #e0e0e0;
+  line-height: 1.6; /* Improved readability */
+}
+
+body {
+  animation: fadeIn 1s ease forwards;
 }
 
 @keyframes fadeIn {
@@ -31,10 +36,15 @@ img {
   display: inline-block;
   margin: 10px;
   transition: transform 0.2s ease;
+  background-color: #1e1e1e; /* Background for cards */
+  border-radius: 8px; /* Rounded corners */
+  padding: 10px; /* Padding for spacing */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
 
 .platform:hover, .language:hover, .server:hover {
   transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Elevate shadow on hover */
 }
 
 /* Tooltip Styling */
@@ -65,22 +75,12 @@ img {
 /* Wrapper Styles */
 .wrapper {
   display: flex;
+  flex-direction: column; /* Allow for column alignment if needed */
   justify-content: center;
-  align-items: flex-start;
-  min-height: 100vh;
-}
-
-/* Content Container */
-.content {
-  display: flex;
-  flex-direction: column;
-  width: 90%;
-  max-width: 1400px;
-  margin: 20px;
-  background-color: #1e1e1e;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+  align-items: center;
+  min-height: 100vh; /* Make it take the full height of the viewport */
+  padding: 20px; /* Add padding if needed */
+  box-sizing: border-box; /* Include padding in height calculation */
 }
 
 /* Header Styles */
@@ -90,12 +90,12 @@ img {
 }
 
 .title {
-  font-size: 2.2rem;
+  font-size: 2.5rem; /* Increased size for title */
   color: #ffbf59;
 }
 
 .description {
-  font-size: 1rem;
+  font-size: 1.1rem; /* Slightly larger description */
   color: #b0b0b0;
   margin-bottom: 20px;
 }
@@ -179,10 +179,7 @@ footer {
   font-size: 1.2rem;
 }
 
-.pride-flag {
-  border-radius: 10px;
-}
-
+/* Nostalgia Toggle */
 .nostalgia-toggle {
   background-image: url('/img/todo-categorize-this-folder/nostalgia.png');
   background-color: transparent;
@@ -197,10 +194,12 @@ footer {
 a {
   color: #ffbf59;
   text-decoration: none;
+  padding: 5px; /* Added padding */
 }
 
 a:hover {
   text-decoration: underline;
+  background-color: rgba(255, 191, 89, 0.2); /* Subtle background on hover */
 }
 
 a.pronoun {
@@ -226,9 +225,25 @@ a.pronoun:hover {
   z-index: 1000;   /* Ensure it appears above other content */
 }
 
+.dropdown-button {
+  background-color: #1e1e1e; /* Dark button background */
+  color: #e0e0e0; /* Text color */
+  border: 1px solid #333; /* Border color */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px; /* Increased padding */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transition effects */
+}
+
+.dropdown-button:hover {
+  background-color: #333; /* Darker background on hover */
+  transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+/* Dropdown Content */
 .dropdown-content {
   display: none; /* Hide dropdown content by default */
-  position: absolute;
+  position: absolute; /* Position it relative to the button */
   bottom: 100%; /* Position above the button */
   left: 50%;
   transform: translateX(-50%);
@@ -255,10 +270,12 @@ a.pronoun:hover {
   display: flex; /* Use flex to align flag and text */
   align-items: center; /* Center vertically */
   color: #e0e0e0; /* Text color to match overall theme */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transition effects */
 }
 
 .dropdown-item:hover {
   background-color: #333; /* Dark background on hover for visibility */
+  transform: translateX(2px); /* Slight slide effect on hover */
 }
 
 /* Flag Icon Styles */
@@ -268,18 +285,17 @@ a.pronoun:hover {
   margin-right: 8px; /* Space between flag and text */
 }
 
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem; /* Responsive font size */
+  }
+  
+  .description {
+    font-size: 0.9rem; /* Responsive description */
+  }
 
-.dropdown-button {
-  background-color: #1e1e1e;
-  color: #e0e0e0;
-  border: 1px solid #333;
-  border-radius: 5px;
-  padding: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  .platform, .language, .server {
+    width: 100%; /* Full width for small screens */
+  }
 }
-
-.dropdown-button:hover {
-  background-color: #333;
-}
-

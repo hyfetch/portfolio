@@ -1,7 +1,6 @@
 import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 import { useLocalStorage } from 'react-use';
 
-// Define Localization and LocalizationContextType interfaces
 interface Localization {
   [key: string]: string;
 }
@@ -12,10 +11,8 @@ interface LocalizationContextType {
   language: string;
 }
 
-// Create context
 const LocalizationContext = createContext<LocalizationContextType | undefined>(undefined);
 
-// Custom hook to use the localization context
 export const useLocalization = () => {
   const context = useContext(LocalizationContext);
   if (!context) {
@@ -24,15 +21,33 @@ export const useLocalization = () => {
   return context;
 };
 
-// Define LocalizationProvider component
 export const LocalizationProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [storedLanguage, setStoredLanguage] = useLocalStorage('language', 'en');
-  const initialLanguage = storedLanguage || 'en'; // Ensure consistent initial value
-  const [language, setLanguage] = useState<string>(initialLanguage);
+  const [storedLanguage, setStoredLanguage] = useLocalStorage('language', '');
+  const [language, setLanguage] = useState<string>(''); // Start with an empty string
   const [localization, setLocalization] = useState<Localization | null>(null);
-  const [loading, setLoading] = useState<boolean>(true); // State to manage loading
+  const [loading, setLoading] = useState<boolean>(true);
 
-  // Fetch localization data from the server
+  const supportedLanguages = ['en', 'es', 'de', 'ru', 'pl', 'jp'];
+
+  // Get initial language based on browser settings
+  const getBrowserLanguage = () => {
+    const browserLanguage = navigator.language.split('-')[0]; // Get primary language
+    return supportedLanguages.includes(browserLanguage) ? browserLanguage : 'en';
+  };
+
+  useEffect(() => {
+    const initialLanguage = storedLanguage || getBrowserLanguage(); // Get language based on stored or browser
+    const finalLanguage = supportedLanguages.includes(initialLanguage) ? initialLanguage : 'en';
+
+    console.log("Initial language set to:", finalLanguage); // Debug log
+    setLanguage(finalLanguage);
+    
+    // Set stored language only if there was none
+    if (!storedLanguage) {
+      setStoredLanguage(finalLanguage); // Save the determined language to local storage
+    }
+  }, [storedLanguage, setStoredLanguage]);
+
   const fetchLocalization = async (lang: string) => {
     try {
       const response = await fetch(`/localization/${lang}.json`);
@@ -49,20 +64,22 @@ export const LocalizationProvider: React.FC<{ children: ReactNode }> = ({ childr
 
   useEffect(() => {
     const loadLocalization = async () => {
+      setLoading(true);
       const localizationData = await fetchLocalization(language);
       setLocalization(localizationData);
-      setLoading(false); // Set loading to false after fetching
+      setLoading(false);
     };
 
-    loadLocalization();
+    if (language) { // Only load localization if language is set
+      loadLocalization();
+    }
   }, [language]);
 
   const handleLanguageChange = (lang: string) => {
     setLanguage(lang);
-    setStoredLanguage(lang);
+    setStoredLanguage(lang); // Update stored language on manual change
   };
 
-  // Show a loading state if localization is not yet loaded
   if (loading) {
     return <div>Loading...</div>; // You can customize this loading indicator
   }
@@ -71,7 +88,6 @@ export const LocalizationProvider: React.FC<{ children: ReactNode }> = ({ childr
     <LocalizationContext.Provider value={{ localization, setLanguage: handleLanguageChange, language }}>
       <div className="localization-provider">
         {children}
-        {/* Language Selector Dropdown */}
         <div className="language-selector">
           <CustomDropdown currentLang={language} onLangChange={handleLanguageChange} />
         </div>
@@ -80,7 +96,6 @@ export const LocalizationProvider: React.FC<{ children: ReactNode }> = ({ childr
   );
 };
 
-// Custom dropdown component
 const CustomDropdown: React.FC<{ currentLang: string; onLangChange: (lang: string) => void }> = ({ currentLang, onLangChange }) => {
   const languages = [
     { code: 'en', name: 'English', flag: 'https://flagcdn.com/w20/us.png' },
@@ -90,7 +105,8 @@ const CustomDropdown: React.FC<{ currentLang: string; onLangChange: (lang: strin
     { code: 'pl', name: 'Polski', flag: 'https://flagcdn.com/w20/pl.png' },
     { code: 'jp', name: '日本語', flag: 'https://flagcdn.com/w20/jp.png' },
   ];
-  const [isOpen, setIsOpen] = useState(false); // State to control dropdown visibility
+
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => setIsOpen((prev) => !prev);
 
