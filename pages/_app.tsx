@@ -1,7 +1,6 @@
-import '../styles/global.css'; // Import the global CSS file
-import { AppProps } from 'next/app'; // Import AppProps from next/app
-import LocalizationProvider from './LocalizationContext'; // Import the LocalizationProvider
-
+import '../styles/global.css';
+import { AppProps } from 'next/app'; 
+import LocalizationProvider from './LocalizationContext'; 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <LocalizationProvider>

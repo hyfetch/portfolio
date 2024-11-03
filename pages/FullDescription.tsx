@@ -5,7 +5,7 @@ const FullDescription: React.FC = () => {
   const { localization } = useLocalization();
 
   if (!localization) {
-    return <div>Loading...</div>; // Loading state
+    return <div>Loading...</div>; 
   }
 
   return (

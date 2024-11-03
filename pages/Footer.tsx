@@ -5,7 +5,7 @@ export default function Footer() {
     const { localization } = useLocalization();
 
     if (!localization) {
-        return <div>Loading...</div>; // Loading state
+        return <div>Loading...</div>; 
     }
 
     return (
