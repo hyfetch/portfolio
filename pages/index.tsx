@@ -4,10 +4,8 @@ import NotableRoles from './NotableRoles';
 import FindMe from './FindMe';
 import Skills from './Skills';
 import Header from './header';
-import Toast from './Toast';
 import Footer from './Footer';
 import Head from 'next/head';
-// import Nostalgia from './Nostalgia';
 export default function Home() {
   return (
     <div className="bg-gray-100 min-h-screen">
@@ -24,10 +22,6 @@ export default function Home() {
           <Skills />
           <FindMe />
           <Footer />
-          {/* <Toast /> */}
-{/*           <I need to add this comment  /> */}
-{/*           <Nostalgia /> */}
-          {/* <NotificationBanner /> */}
         </div>
       </div>
     </div>
