@@ -11,7 +11,7 @@ export default function FindMe() {
     const socialLinks: SocialLinkProps[] = [
         { href: "https://bsky.app/profile/mero.lol", src: "/img/platforms/bsky.svg", alt: "Bluesky", label: "Bluesky" },
         { href: "https://github.com/hyfetch", src: "/img/platforms/github.svg", alt: "GitHub", label: "GitHub" },
-        { href: "https://t.me/mstrvlol", src: "/img/platforms/telegram.svg", alt: "Telegram", label: "Telegram" },
+        { href: "https://t.me/uwufetch", src: "/img/platforms/telegram.svg", alt: "Telegram", label: "Telegram" },
         { href: "https://signal.me/#eu/N7yOFvUXG41zhsmm9sF15rtDgD_OqsVM3Ay-fi_yoS5MSKihjahKgpChEkojVWdE", src: "/img/platforms/signal.svg", alt: "Signal", label: "Signal" },
         { href: "https://steamcommunity.com/id/hyfetchl", src: "/img/platforms/steam.svg", alt: "Steam", label: "Steam" },
         { href: "https://namemc.com/profile/Mstrv.1", src: "/img/platforms/namemc.svg", alt: "NameMC", label: "Minecraft" },

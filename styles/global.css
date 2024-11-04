@@ -287,3 +287,13 @@ a.pronoun:hover {
     width: 100%; /* Full width for small screens */
   }
 }
+
+
+.socials-simple {
+  align-items: center;
+  text-align: center;
+  height: 100vh; /* Full viewport height */
+  display: flex; /* Flexbox for vertical centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}

@@ -31,7 +31,12 @@ export const LocalizationProvider: React.FC<{ children: ReactNode }> = ({ childr
 
   // Get initial language based on browser settings
   const getBrowserLanguage = () => {
-    const browserLanguage = navigator.language.split('-')[0]; // Get primary language
+    const browserLanguage = navigator.language
+    // Check for Japanese language
+    if (browserLanguage === 'ja') {
+      return 'jp'; // Set to 'jp' for Japanese
+    }
+    // Okay, so the reason why this is implemented, is that  browsers return JA as language code  on the navigator.language, which is frankly... weird, but who am i to judge?
     return supportedLanguages.includes(browserLanguage) ? browserLanguage : 'en';
   };
 
