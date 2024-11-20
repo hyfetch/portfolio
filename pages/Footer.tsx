@@ -1,17 +1,31 @@
 import React from 'react';
+import { memo } from 'react';
 import { useLocalization } from './LocalizationContext'; 
 
-export default function Footer() {
+const Footer: React.FC = () => {
     const { localization } = useLocalization();
 
     if (!localization) {
-        return <div>Loading...</div>; 
+        return <div aria-live="polite">Loading...</div>; 
     }
+
+    const { footerText1, footerText2, contactLinkText } = localization;
 
     return (
         <footer className="footer">
-            <p>{localization.footerText1}</p>
-            <p>{localization.footerText2} <a href="https://contact.mero.lol" rel="noopener noreferrer">{localization.contactLinkText}</a></p>
+            <p>{footerText1}</p>
+            <p>
+                {footerText2} 
+                <a 
+                    href="https://contact.mero.lol" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                >
+                    {contactLinkText}
+                </a>
+            </p>
         </footer>
     );
 }
+
+export default Footer;

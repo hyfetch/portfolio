@@ -1,13 +1,12 @@
 {
     "headerText": "Привет, я",
     "title": "Кто я?",
-    "description": "Привет, я Mero. Я 16-летний самоучка-разработчик, в настоящее время изучаю компьютерные науки.",
+    "description": "Привет, я Меро, я тостер и я пишу код :3",
     "footerText1": "OwO что то?",
     "footerText2": "В любом случае, если вы хотите связаться со мной, обратитесь к",
     "contactLinkText": "Здесь",
     "programmingLanguages": "Языки программирования",
-    "frameworksAndLibraries": "Фреймворки и библиотеки",
-    "Virtualization": "Виртуализация"
+    "frameworksAndLibraries": "Фреймворки и библиотеки"
 }
 
 

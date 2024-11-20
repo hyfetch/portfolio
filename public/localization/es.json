@@ -1,12 +1,11 @@
 {
     "headerText": "Hola, soy",
     "title": "¿Quién soy?",
-    "description": "¡Hola! Soy Mero. Soy un desarrollador autodidacta de 16 años que actualmente estudia ciencias de la computación. Y eso es todo sobre mí.",
+    "description": "Hola, soy Mero, soy una tostadora y hago código :3",
     "footerText1": "OwO ¿Qué es esto?",
     "footerText2": "Si deseas ponerse en contacto conmigo, consulta",
     "contactLinkText": "Aquí",
     "programmingLanguages": "Lenguajes de programación",
-    "frameworksAndLibraries": "Frameworks y bibliotecas",
-    "Virtualization": "Virtualización"
+    "frameworksAndLibraries": "Frameworks y bibliotecas"
 }
 

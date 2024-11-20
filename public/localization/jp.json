@@ -1,12 +1,11 @@
 {
     "headerText": "こんにちは、私は",
     "title": "私は誰ですか？",
-    "description": "やあ、私はメロです。16歳の独学の開発者で、現在コンピュータサイエンスを勉強しています。那は私のすべてです。",
+    "description": "ヘイオー、私はメロ、トースターで、コードを作る :3",
     "footerText1": "OwO これは何？",
     "footerText2": "とにかく、私に連絡したい場合は、以下を参照してください。",
     "contactLinkText": "こちら",
     "programmingLanguages": "プログラミング言語",
-    "frameworksAndLibraries": "フレームワークとライブラリ",
-    "Virtualization": "仮想化"
+    "frameworksAndLibraries": "フレームワークとライブラリ"
 }
 

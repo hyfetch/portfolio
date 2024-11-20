@@ -20,7 +20,7 @@ export default function NotableRoles() {
     const roles = [
         { href: "https://discord.gg/ntts", src: "https://cdn.discordapp.com/icons/820745488231301210/cb18d422b7f7933f11f5e2f60b8c0bdd.webp?size=1024&width=563&height=563", alt: "NTTS", label: 'Mod @ NTTS' },
         { href: "https://discord.gg/narpy", src: "https://cdn.discordapp.com/icons/866749259209900084/fe8918044626715ebd5de24189e45f49.webp?size=1024&format=webp&width=0&height=281", alt: "Narpy", label: 'Helper @ Narpy' },
-        { href: "https://discord.gg/kuromicord", src: "https://cdn.discordapp.com/icons/1033955294193123338/fd2748b2a8e1bae3713f656aa9268da2.webp?size=1024&format=webp&width=0&height=281", alt: "Kuromicafe", label: 'Mod @ Kuromicafe' },
+        { href: "https://discord.gg/kuromicord", src: "https://cdn.discordapp.com/icons/1033955294193123338/3be57fd9066faa40d6c68929e05e86c6.webp?size=1024&width=563&height=563", alt: "Kuromicafe", label: 'Mod @ Kuromicafe' },
     ];
 
     return (

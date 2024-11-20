@@ -1,11 +1,10 @@
 {
   "headerText": "Cześć! Jestem",
   "title": "Kim jestem?",
-  "description": "Hej, nazywam się Mero. Jestem 16-letnim samowykształconym deweloperem studiującym informatykę. I to tak naprawdę tyle z mojej strony.",
+  "description": "Hej, jestem Mero, jestem tosterem i robię kod :3",
   "footerText1": "OwO co to?",
   "footerText2": "W każdym razie, jeśli chcesz skontaktować się ze mną, metody mojego kontaktu są ",
   "contactLinkText": "Tutaj",
   "programmingLanguages": "Języki programowania",
-  "frameworksAndLibraries": "Frameworki i biblioteki",
-  "Virtualization": "Narzędzia i technologie"
+  "frameworksAndLibraries": "Frameworki i biblioteki"
 }

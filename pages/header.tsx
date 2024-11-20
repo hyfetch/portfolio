@@ -2,62 +2,59 @@ import React, { useEffect, useState } from 'react';
 import { useLocalization } from './LocalizationContext';
 
 const names = ['Mero', 'mstrv', 'merowo', 'Mae'];
-export default function Header() {
+
+const Header: React.FC = () => {
   const { localization } = useLocalization();
   const [displayedText, setDisplayedText] = useState('');
-  let currentIndex = 0;
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    const textElement = document.getElementById('name');
-
-    if (!textElement) return; // Check if element is not null
-
     const animateText = () => {
       const currentName = names[currentIndex % names.length];
-      let text = textElement.textContent || '';
+      const totalLength = displayedText.length + currentName.length;
 
-      // Delete previous name letter by letter
-      for (let i = text.length; i >= 0; i--) {
-        setTimeout(() => {
-          text = textElement.textContent?.slice(0, -1) || ''; // Remove the last character safely
-          if (textElement) {
-            textElement.textContent = text;
-          }
-        }, (text.length - i) * 150); // Delete one letter every 150 milliseconds
-      }
+      let deleteIndex = displayedText.length; // Start with the full current displayed text
+      let newText = '';
 
-      // Add new name letter by letter
-      for (let i = 0; i < currentName.length; i++) {
-        setTimeout(() => {
-          text += currentName[i];
-          if (textElement) {
-            textElement.textContent = text;
-            setDisplayedText(text);
-          }
-        }, (text.length + i) * 150); // Add one letter every 150 milliseconds after deleting previous name
-      }
+      const interval = setInterval(() => {
+        if (deleteIndex > 0) {
+          // Delete one letter
+          newText = displayedText.slice(0, deleteIndex - 1);
+          setDisplayedText(newText);
+          deleteIndex--;
+        } else if (newText.length < currentName.length) {
+          // Add one letter
+          newText += currentName[newText.length];
+          setDisplayedText(newText);
+        } else {
+          clearInterval(interval);
+          // Update the current index to move to the next name
+          setCurrentIndex((prevIndex) => prevIndex + 1);
+        }
+      }, 150); // Change name every 150 milliseconds
 
-      currentIndex++; // Move to the next name
+      // Clear the interval when finished
+      return () => clearInterval(interval);
     };
 
-    const interval = setInterval(animateText, 3600); // Change name every 3.6 seconds
+    const intervalId = setInterval(animateText, 3600); // Change name every 3.6 seconds
 
-    // Clear the interval when the component unmounts
-    return () => clearInterval(interval);
-  }, []);
+    // Clean up the interval when the component unmounts
+    return () => clearInterval(intervalId);
+  }, [displayedText, currentIndex]);
 
   return (
     <div className="header-container">
       <div className="header text-center mb-8">
-        <h1 className="title text-3xl font-bold mb-2">
-          {localization?.headerText} <span id="name">{displayedText}</span>
+        <h1 className="title text-3xl font-bold mb-2" aria-live="polite">
+          {localization?.headerText} <span>{displayedText}</span>
           <span className="cursor">|</span>
         </h1>
         {/* Image */}
         <div className="image-container">
           <img
-            src="https://cdn.discordapp.com/avatars/852891241125117962/a_31120f0f322c9e1127cb613ef059dc32.gif?size=4096"
-            alt="PFP"
+            src="https://cdn.discordapp.com/avatars/852891241125117962/a_552dc1880ba3807fd731a2141bb29463.gif?size=4096"
+            alt="Profile picture"
             height="200"
             width="200"
           />
@@ -73,5 +70,6 @@ export default function Header() {
       </div>
     </div>
   );
-}
+};
 
+export default Header;

@@ -4,7 +4,7 @@ import { useLocalization } from './LocalizationContext';
 const FullDescription: React.FC = () => {
   const { localization } = useLocalization();
 
-  if (!localization) {
+  if (localization === null) {
     return <div>Loading...</div>; 
   }
 
@@ -17,3 +17,4 @@ const FullDescription: React.FC = () => {
 };
 
 export default FullDescription;
+
