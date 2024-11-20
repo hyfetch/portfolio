@@ -5,6 +5,6 @@
   "footerText1": "OwO co to?",
   "footerText2": "W każdym razie, jeśli chcesz skontaktować się ze mną, metody mojego kontaktu są ",
   "contactLinkText": "Tutaj",
-  "programmingLanguages": "Języki programowania",
-  "frameworksAndLibraries": "Frameworki i biblioteki"
+  "frontend": "Frontend",
+    "backend": "Backend"
 }
