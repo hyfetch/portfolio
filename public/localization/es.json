@@ -5,7 +5,7 @@
     "footerText1": "OwO ¿Qué es esto?",
     "footerText2": "Si deseas ponerse en contacto conmigo, consulta",
     "contactLinkText": "Aquí",
-    "frontend": "Frontend",
-    "backend": "Backend"
+    "frontEnd": "frontEnd",
+    "backEnd": "backEnd"
 }
 
