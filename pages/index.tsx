@@ -22,7 +22,9 @@ const Home = () => (
         <Skills />
         <FindMe />
         <Footer />
-        <a rel="me" href="https://meow.social/@mero" style={{ display: 'none' }}>Mastodon</a>
+        <div className="Mastodon">
+        <a rel="me" href="https://meow.social/@mero">Mastodon</a>
+        </div>
       </div>
     </div>
   </div>

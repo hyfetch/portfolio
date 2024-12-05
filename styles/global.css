@@ -297,3 +297,7 @@ a.pronoun:hover {
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
 }
+
+.mastodon {
+  display: none;
+}
