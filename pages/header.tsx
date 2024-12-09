@@ -53,7 +53,7 @@ const Header: React.FC = () => {
         {/* Image */}
         <div className="image-container">
           <img
-            src="https://cdn.discordapp.com/avatars/852891241125117962/a_552dc1880ba3807fd731a2141bb29463.gif?size=4096"
+            src="https://cdn.discordapp.com/avatars/852891241125117962/b013add19a2dfcc0af6fd82abc070b33.webp?size=1024&width=4096&height=4096"
             alt="Profile picture"
             height="200"
             width="200"
