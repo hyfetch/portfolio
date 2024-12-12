@@ -149,6 +149,10 @@ export const LocalizationProvider: React.FC<{ children: ReactNode }> = ({ childr
 
   // Show loading state while localization data is being fetched
   if (loading) {
+    // Basically its' done like that because its' first thing that the site see's and mastodon needs to be done like that sadly
+    <div className="Mastodon">
+        <a rel="me" href="https://meow.social/@mero">Mastodon</a>
+      </div>
     return <div>Loading localization...</div>;
   }
 
