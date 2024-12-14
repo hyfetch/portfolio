@@ -297,7 +297,7 @@ a.pronoun:hover {
 }
 
 /* Media Queries for Responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 64px) {
   .title {
     font-size: 2rem;
   }
