@@ -11,7 +11,7 @@ const socialLinks: SocialLinkProps[] = [
     { href: "https://bsky.app/profile/mero.lol", src: "/img/platforms/bsky.svg", alt: "Bluesky", label: "Bluesky" },
     { href: "https://github.com/hyfetch", src: "/img/platforms/github.svg", alt: "GitHub", label: "GitHub" },
     { href: "https://t.me/uwufetch", src: "/img/platforms/telegram.svg", alt: "Telegram", label: "Telegram" },
-    { href: "https://signal.me/#eu/N7yOFvUXG41zhsmm9sF15rtDgD_OqsVM3Ay-fi_yoS5MSKihjahKgpChEkojVWdE", src: "/img/platforms/signal.svg", alt: "Signal", label: "Signal" },
+    { href: "https://href.mero.gay/signal", src: "/img/platforms/signal.svg", alt: "Signal", label: "Signal"},
     { href: "https://steamcommunity.com/id/hyfetchl", src: "/img/platforms/steam.svg", alt: "Steam", label: "Steam" },
     { href: "https://namemc.com/profile/Mstrv.1", src: "/img/platforms/namemc.svg", alt: "NameMC", label: "Minecraft" },
     { href: "https://meow.social/@mero", src: "/img/platforms/meowsocial.png", alt: "Mastodon", label: "meow.social" },
@@ -37,7 +37,7 @@ const FindMe: React.FC = () => {
                         /**
                          * Okay, personally i just found this ugly as an object in an <ul></ul>
                          * why? mainly because it had the stupid ass dot before it which... didn't look nice, it's mostly a personal portfolio so i do it so i personally like how it looks ^w^
-                         * Wouldn't it be a better coding practice to do in <ul> / <li>? Yeah, and it's none of my business how a professional developer would handle it, i currently do frontend for a hobby so it doesn't really matter if i follow the "Best" coding 
+                         * Wouldn't it be a better coding practice to do in <ul> / <li>? Yeah, and it's none of my business how a professional developer would handle it, i currently do Frontend for a hobby so it doesn't really matter if i follow the "Best" coding 
                          * tl;dr not the best coding practice, but as long as it isn't a security vurnerability i'll do it my way 🤷‍♂️
                          */
                     }

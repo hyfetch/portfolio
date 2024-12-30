@@ -18,9 +18,9 @@ const RoleLink: React.FC<RoleLinkProps> = ({ href, src, alt, label }) => {
 
 export default function NotableRoles() {
     const roles = [
-        // { href: "https://discord.gg/ntts", src: "https://cdn.discordapp.com/icons/820745488231301210/a_8ffcb2ee8c132accae044b01dd91ce6a.gif?size=1024&width=563&height=563", alt: "NTTS", label: 'Mod @ NTTS' },
-        { href: "https://discord.gg/narpy", src: "https://cdn.discordapp.com/icons/866749259209900084/fe8918044626715ebd5de24189e45f49.webp?size=1024&format=webp&width=0&height=281", alt: "Narpy", label: 'Helper @ Narpy' },
-        { href: "https://discord.gg/kuromicord", src: "https://cdn.discordapp.com/icons/1033955294193123338/559e838f859ce10b26388c8f9f5be9d9.webp?size=1024&width=563&height=563", alt: "Kuromicafe", label: 'Mod @ Kuromicafe' },
+        { href: "https://discord.gg/ntts", src: "https://href.mero.gay/images/nttsimage", alt: "NTTS", label: 'Mod @ NTTS' },
+        { href: "https://discord.gg/narpy", src: "https://cdn.discordapp.com/icons/866749259209900084/fe8918044626715ebd5de24189e45f49.webp?size=1024&format=webp&width=0&height=281", alt: "Narpy", label: 'Manager @ Narpy' },
+        { href: "https://discord.gg/kuromicord", src: "https://cdn.discordapp.com/icons/1033955294193123338/559e838f859ce10b26388c8f9f5be9d9.webp?size=1024&width=563&height=563", alt: "Kuromicafe", label: 'Admin @ Kuromicafe' },
     ];
 
     return (

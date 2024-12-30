@@ -2,7 +2,6 @@
 import FullDescription from './FullDescription';
 import NotableRoles from './NotableRoles';
 import FindMe from './FindMe';
-import Skills from './Skills';
 import Header from './header';
 import Footer from './Footer';
 import Head from 'next/head';
@@ -27,7 +26,6 @@ const Home = () => (
         <Header />
         <FullDescription />
         <NotableRoles />
-        <Skills />
         <FindMe />
         <Footer />
         <div className="Mastodon">
