@@ -1,7 +1,7 @@
 {
     "headerText": "Hi, i'm",
-    "title": "Who am I?",
-    "description": "Heyo, i'm Mero, i'm a toaster and i do code :3",
+    "title": "What is this?",
+    "description": "This site serves as a portfolio and a hub for my socials. You can find the full source code at my github. and it was built using Next.js.", 
     "footerText1": "OwO what's this?",
     "footerText2": "Anyways, if you want to reach me refer to",
     "contactLinkText": "Here",

@@ -50,6 +50,14 @@ const Header: React.FC = () => {
           {localization?.headerText} <span>{displayedText}</span>
           <span className="cursor">|</span>
         </h1>
+        <p>
+          {' '}
+          <span className="pronoun">
+            <a href="https://en.pronouns.page/@mstrv" target="_blank" rel="noopener noreferrer">
+              any/all
+            </a>
+          </span>
+        </p>
         {/* Image */}
         <div className="image-container">
           <img
@@ -59,14 +67,6 @@ const Header: React.FC = () => {
             width="200"
           />
         </div>
-        <p>
-          I go by{' '}
-          <span className="pronoun">
-            <a href="https://en.pronouns.page/@mstrv" target="_blank" rel="noopener noreferrer">
-              any/all
-            </a>
-          </span>
-        </p>
       </div>
     </div>
   );

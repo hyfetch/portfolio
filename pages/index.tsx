@@ -28,9 +28,6 @@ const Home = () => (
         <NotableRoles />
         <FindMe />
         <Footer />
-        <div className="Mastodon">
-        <a rel="me" href="https://meow.social/@mero">Mastodon</a>
-        </div>
       </div>
     </div>
   </div>

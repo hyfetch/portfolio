@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
             <p>
                 {footerText2} 
                 <a 
-                    href="https://contact.mero.lol" 
+                    href="https://hmu.mero.gay" 
                     target="_blank" 
                     rel="noopener noreferrer"
                 >

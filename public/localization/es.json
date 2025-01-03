@@ -1,7 +1,7 @@
 {
     "headerText": "Hola, soy",
-    "title": "¿Quién soy?",
-    "description": "Hola, soy Mero, soy una tostadora y hago código :3",
+    "title": "¿Qué es esto?",
+    "description": "Este sitio funciona como un portafolio y un centro para mis redes sociales. El código fuente completo está disponible en el repositorio de GitHub y fue desarrollado con Next.js.",  
     "footerText1": "OwO ¿Qué es esto?",
     "footerText2": "Si deseas ponerse en contacto conmigo, consulta",
     "contactLinkText": "Aquí",

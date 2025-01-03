@@ -1,7 +1,7 @@
 {
   "headerText": "Cześć! Jestem",
-  "title": "Kim jestem?",
-  "description": "Hej, jestem Mero, jestem tosterem i robię kod :3",
+  "title": "Co to jest?",
+  "description": "Ta strona działa jako portfolio oraz centrum moich mediów społecznościowych. Pełny kod źródłowy jest dostępny na moin Githubie i został stworzony z użyciem Next.js.",
   "footerText1": "OwO co to?",
   "footerText2": "W każdym razie, jeśli chcesz skontaktować się ze mną, metody mojego kontaktu są ",
   "contactLinkText": "Tutaj",
