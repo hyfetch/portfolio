@@ -17,7 +17,6 @@ const socialLinks: SocialLinkProps[] = [
     { href: "https://x.com/hyfetch", src: "/img/platforms/twitter.svg", alt: "Twitter", label: "Twitter" },
     { href: "https://vrchat.com/home/user/usr_09c038af-bde8-4c49-9c35-a72466b54851", src: "/img/platforms/VRChat.svg", alt: "VRChat", label: "VRChat" },
     { href: "https://www.furaffinity.net/user/mstrv", src: "/img/platforms/furaffinity.svg", alt: "FurAffinity", label: "FurAffinity" },
-    { href: "https://www.roblox.com/users/6226531012/profile", src: "/img/platforms/roblox.svg", alt: "Roblox", label: "Roblox" },
 ];
 
 const FindMe: React.FC = () => {

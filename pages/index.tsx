@@ -24,7 +24,7 @@ const Home = () => (
     <div className="wrapper">
       <div className="content max-w-4xl mx-auto py-8 px-4">
         <Header />
-        <FullDescription />
+        {/* <FullDescription /> */}
         <NotableRoles />
         <FindMe />
         <Footer />
