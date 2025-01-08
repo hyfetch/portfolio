@@ -7,7 +7,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #121212;
+  background-color: #111111;
   color: #e0e0e0;
   line-height: 1.6;
   max-width: 1000px;
@@ -110,7 +110,7 @@ img {
 
 .title {
   font-size: 2.5rem;
-  color: #ffbf59;
+  color: #02A0FE;
 }
 
 .description {
@@ -209,14 +209,14 @@ footer {
 }
 
 a {
-  color: #ffbf59;
+  color: #02A0FE;
   text-decoration: none;
   padding: 5px;
 }
 
 a:hover {
   text-decoration: underline;
-  background-color: rgba(255, 191, 89, 0.2);
+  background-color: rgba(2, 160, 254, 0.2)
 }
 
 a.pronoun {
