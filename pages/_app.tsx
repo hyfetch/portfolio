@@ -22,3 +22,5 @@ function MyApp({ Component, pageProps }: AppProps) {
     </LocalizationProvider>
   );
 }
+
+export default MyApp
